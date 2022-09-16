@@ -98,8 +98,8 @@ class Finances:
             savings_health = "Unhealthy"
         else:
             needs_health = "Healthy"
-            wants_health = "Health"
-            savings_health = "Health"
+            wants_health = "Healthy"
+            savings_health = "Healthy"
 
         needs_actual_amount = round((needs_percentage / 100) * self.income_total, 2)
         needs_safe_amount = round(0.5 * self.income_total, 2)
