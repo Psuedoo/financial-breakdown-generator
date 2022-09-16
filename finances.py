@@ -115,15 +115,17 @@ class Finances:
             ]
         )
 
-        left_overs = self.income_total - needs_actual_amount
+        savings_amount = self.income_total * 0.2
+        wants_amount = self.income_total - (savings_amount + needs_actual_amount)
+        wants_actual_percentage = round(100 / (self.income_total / wants_amount))
 
         headers.extend(
             [
                 "Wants",
                 str(30) + "%",
-                str(),
-                "",
-                "",
+                str(wants_actual_percentage) + "%",
+                "$" + str(round(wants_amount, 2)),
+                "$" + str(self.income_total * 0.3),
                 wants_health,
             ]
         )
@@ -132,9 +134,9 @@ class Finances:
             [
                 "Savings",
                 str(20) + "%",
-                "",
-                "",
-                "",
+                str(20) + "%",
+                "$" + str(savings_amount),
+                "$" + str(savings_amount),
                 savings_health,
             ]
         )
